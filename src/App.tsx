@@ -1,6 +1,6 @@
 import "./App.css";
 import { useState } from "react";
-import { Diff } from "./components/diff/Diff";
+import { Diff } from "./components/Diff/Diff";
 import type { FileContents } from "@pierre/diffs";
 import { FileContentDialog } from "./components/FileContentDialog/FileContentDialog";
 import { newFileAtom, oldFileAtom } from "./atoms";
