@@ -1,3 +1,43 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+  --bg-color: white;
+  --bg-l1-color: #eee;
+  --fg-color: black;
+  --font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: black;
+    --bg-l1-color: #111;
+    --fg-color: white;
+  }
+}
+
+body,
+dialog {
   margin: 0;
+  background-color: var(--bg-color);
+  color: var(--fg-color);
+  font-family: var(--font-family);
+}
+
+button {
+  font-family: var(--font-family);
+  padding: 1rem;
+  background-color: var(--bg-color);
+  color: var(--fg-color);
+  border: 1px solid var(--fg-color);
+
+  &:hover {
+    background-color: var(--bg-l1-color);
+  }
+}
+
+textarea,
+input {
+  background-color: var(--bg-l1-color);
+  color: var(--fg-color);
+  border: 1px solid var(--fg-color);
 }

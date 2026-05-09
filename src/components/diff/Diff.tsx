@@ -1,26 +1,19 @@
-import {
-  MultiFileDiff,
-} from '@pierre/diffs/react';
-import { useAtomValue } from 'jotai';
-import { useState } from 'react';
-import { newFileAtom, oldFileAtom } from '../../atoms';
-
-type DiffStyle = "split" | "unified";
+import { MultiFileDiff } from "@pierre/diffs/react";
+import { useAtomValue } from "jotai";
+import { diffStyleAtom, newFileAtom, oldFileAtom } from "../../atoms";
 
 export function Diff() {
-
-  const [diffStyle, setDiffStyle] = useState<DiffStyle>('unified');
+  const diffStyle = useAtomValue(diffStyleAtom);
   const oldFile = useAtomValue(oldFileAtom);
   const newFile = useAtomValue(newFileAtom);
 
-  return (<>
-    <button onClick={() => setDiffStyle(diffStyle === 'split' ? 'unified' : 'split')}>
-      Toggle Diff Style
-    </button>
-    <MultiFileDiff
-      oldFile={oldFile}
-      newFile={newFile}
-      options={{ diffStyle, theme: 'pierre-dark' }}
-    />
-  </>);
+  return (
+    <>
+      <MultiFileDiff
+        oldFile={oldFile}
+        newFile={newFile}
+        options={{ diffStyle, theme: "pierre-dark" }}
+      />
+    </>
+  );
 }

@@ -1,1 +1,10 @@
+h1 {
+  text-align: center;
+  font-weight: normal;
+  margin: 0.25rem 0 0.5rem;
+}
 
+.edit-file-actions {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
