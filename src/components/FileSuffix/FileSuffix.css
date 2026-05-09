@@ -1,0 +1,6 @@
+.file-suffix-container {
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
+  padding: 0 4px;
+}

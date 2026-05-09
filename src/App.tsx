@@ -6,6 +6,7 @@ import { FileContentDialog } from "./components/FileContentDialog/FileContentDia
 import { newFileAtom, oldFileAtom } from "./atoms";
 import type { PrimitiveAtom } from "jotai";
 import { DiffStyleToggle } from "./components/DiffStyleToggle/DiffStyleToggle";
+import { FileSuffix } from "./components/FileSuffix/FileSuffix";
 
 export default function App() {
   const [editingFile, setEditingFile] =
@@ -23,7 +24,10 @@ export default function App() {
         />
       ) : null}
 
-      <DiffStyleToggle />
+      <div className="diff-settings-container">
+        <FileSuffix />
+        <DiffStyleToggle />
+      </div>
 
       <div className="edit-file-actions">
         <button
